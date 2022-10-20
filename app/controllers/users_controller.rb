@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     matching_users = User.where({ :username => username })
     @user = matching_users.at(0)
 
-    render({ :template => "user_templates/user_details.html.erb"})
+    render({ :template => "user_templates/show.html.erb"})
   end
   
   def create
