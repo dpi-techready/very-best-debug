@@ -18,6 +18,13 @@ class UsersController < ApplicationController
   end
   
   def create
+    # insert_user_record = params.fetch("query_username")
+
+    # a_new_user = User.new
+    # a_new_user.username = insert_user_record
+
+    # a_new_user.save
+    # redirect_to("/users/" + a_new_user.username)
     @user = User.new
     user.username = params.fetch("query_username")
     user.save
