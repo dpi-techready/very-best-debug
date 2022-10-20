@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
 
   def index
+    # force a ruby console to appear under this context
+    # byebug
     matching_users = User.all
     @users = matching_users.order(:created_at)
 
-    render({ :template => "users_templates/all_users.html.erb"})
+    render({ :template => "user_templates/index.html.erb"})
   end
   
   def show
