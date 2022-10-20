@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    user = User.new
+    @user = User.new
     user.username = params.fetch("query_username")
     user.save
     
