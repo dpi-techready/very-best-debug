@@ -23,14 +23,6 @@ class VenuesController < ApplicationController
     a_new_venue.save
 
     redirect_to("/venues/#{a_new_venue.id}")
-
-    # @venue = Venue.new
-    # venue.address = params.fetch("query_address")
-    # venue.name = params.fetch("query_name")
-    # venue.neighborhood = params.fetch("query_neighborhood")
-    # venue.save
-
-    # redirect_to("/venues/#{venue.name}")
   end
 
   def update
@@ -46,22 +38,20 @@ class VenuesController < ApplicationController
     the_venue.neighborhood = update_neighborhood
     the_venue.save
 
-    # the_id = params.fetch("venue_id")
-
-    # @venue = Venue.where({ :id => the_id })
-    # venue.address = params.fetch("query_address")
-    # venue.name = params.fetch("query_name")
-    # venue.neighborhood = params.fetch("query_neighborhood")
-    # venue.save
-
     redirect_to("/venues/#{the_venue.id}")
   end
 
   def destroy
+        # Parameters: {"path_id" => "785"}
+        # the_id = params.fetch("path_id")
+        # matching_photos = Photo.where({ :id => the_id })
+        # the_photo = matching_photos.at(0)
+        # the_photo.destroy
+
     the_id = params.fetch("venue_id")
     matching_venues = Venue.where({ :id => the_id })
-    venue = matching_venues
-    venue.destroy
+    the_venue = matching_venues.at(0)
+    the_venue.destroy
 
     redirect_to("/venues")
   end

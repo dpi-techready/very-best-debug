@@ -24,12 +24,6 @@ class UsersController < ApplicationController
     a_new_user.save
 
     redirect_to("/users/" + a_new_user.username)
-
-    # @user = User.new
-    # user.username = params.fetch("query_username")
-    # user.save
-    
-    # redirect_to("/users/#{user.username}")
   end
   
   def update
@@ -42,10 +36,6 @@ class UsersController < ApplicationController
     the_user.save
 
     redirect_to("/users/#{the_user.username}")
-    
-    # the_user.username = params.fetch("query_username")
-    # the_user.save
-    # redirect_to("/users/#{user.username}")
   end
 
 end
