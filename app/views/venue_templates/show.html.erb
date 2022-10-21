@@ -53,14 +53,18 @@
     <th>Comment</th>
     <th>Posted</th>
   </tr>
-
   <% @the_venue.comments.each do |comment| %>
   <tr>
-    <td>
+  <td>
+  <!-- store the search for username in the variable user -->
+  <!-- in the search use the ralationship of comment.author_id as a reference for username -->
+  <!-- grab the first and only result from that search using at.(0) -->
+    <% user = User.where({ :id => comment.author_id }).at(0) %>
+    <%= user.username %>
+  </td>
+    <!--<td>
       <%= comment.author_id %>
-      <%= comment.author_id %>
-    </td>
-
+    </td>-->
     <td>
       <%= comment.body %>
     </td>

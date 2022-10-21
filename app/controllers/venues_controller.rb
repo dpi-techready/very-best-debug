@@ -42,12 +42,6 @@ class VenuesController < ApplicationController
   end
 
   def destroy
-        # Parameters: {"path_id" => "785"}
-        # the_id = params.fetch("path_id")
-        # matching_photos = Photo.where({ :id => the_id })
-        # the_photo = matching_photos.at(0)
-        # the_photo.destroy
-
     the_id = params.fetch("venue_id")
     matching_venues = Venue.where({ :id => the_id })
     the_venue = matching_venues.at(0)
